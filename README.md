@@ -1,8 +1,12 @@
 <div align="center">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_UNICEF.svg" alt="UNICEF" width="220" />
+
 # Mina &amp; Raju — Reimagined
 
 ### *A Story Retold in Light*
+
+###### *A fan tribute to UNICEF's beloved 1993 animated series*
 
 **A semi-realistic, cinematic retelling of Bangladesh's most beloved cartoon — where a girl, her brother, and a clever parrot still teach a village to listen.**
 
@@ -189,7 +193,15 @@ Mobile-tested on iOS Safari and Chrome Android.
 </div>
 
 **Inspired by:**
+
+<a href="https://www.unicef.org">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_UNICEF.svg" alt="UNICEF" width="120" align="right" />
+</a>
+
 - **UNICEF's Mina** (1993) — created by Ram Mohan, Rachelle Romeo &amp; team. This is a fan tribute and creative reimagining; all character likenesses are interpretations made with respect for the original work.
+- This project is **not affiliated with or endorsed by UNICEF**. The UNICEF logo is shown for attribution only.
+
+<br clear="right"/>
 
 **Built using:**
 - [Claude Code](https://claude.com/claude-code) by Anthropic — `/animated-website` pipeline
