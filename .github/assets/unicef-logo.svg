@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-label="UNICEF">
+  <g fill="none" stroke="#1CABE2" stroke-width="5" stroke-linecap="round">
+    <circle cx="80" cy="80" r="62"/>
+    <ellipse cx="80" cy="80" rx="26" ry="62"/>
+    <path d="M18 80 H142"/>
+    <path d="M30 50 H130"/>
+    <path d="M30 110 H130"/>
+  </g>
+  <g fill="#1CABE2">
+    <path d="M80 142 Q56 132 46 112" stroke="#1CABE2" stroke-width="3" fill="none"/>
+    <path d="M80 142 Q104 132 114 112" stroke="#1CABE2" stroke-width="3" fill="none"/>
+    <ellipse cx="55" cy="126" rx="5" ry="2.5" transform="rotate(-30 55 126)"/>
+    <ellipse cx="48" cy="118" rx="5" ry="2.5" transform="rotate(-42 48 118)"/>
+    <ellipse cx="42" cy="110" rx="5" ry="2.5" transform="rotate(-52 42 110)"/>
+    <ellipse cx="105" cy="126" rx="5" ry="2.5" transform="rotate(30 105 126)"/>
+    <ellipse cx="112" cy="118" rx="5" ry="2.5" transform="rotate(42 112 118)"/>
+    <ellipse cx="118" cy="110" rx="5" ry="2.5" transform="rotate(52 118 110)"/>
+    <circle cx="70" cy="60" r="9"/>
+    <path d="M55 92 Q55 73 70 73 Q85 73 85 92 L85 102 L55 102 Z"/>
+    <circle cx="93" cy="76" r="5.5"/>
+    <path d="M86 96 Q86 85 93 85 Q100 85 100 96 L100 103 L86 103 Z"/>
+  </g>
+  <g fill="#1CABE2" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="78" letter-spacing="3">
+    <text x="175" y="108">unicef</text>
+  </g>
+</svg>

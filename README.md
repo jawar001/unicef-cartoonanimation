@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_UNICEF.svg" alt="UNICEF" width="220" />
+<img src=".github/assets/unicef-logo.svg" alt="UNICEF" width="220" />
 
 # Mina &amp; Raju — Reimagined
 
@@ -195,7 +195,7 @@ Mobile-tested on iOS Safari and Chrome Android.
 **Inspired by:**
 
 <a href="https://www.unicef.org">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_of_UNICEF.svg" alt="UNICEF" width="120" align="right" />
+  <img src=".github/assets/unicef-logo.svg" alt="UNICEF" width="120" align="right" />
 </a>
 
 - **UNICEF's Mina** (1993) — created by Ram Mohan, Rachelle Romeo &amp; team. This is a fan tribute and creative reimagining; all character likenesses are interpretations made with respect for the original work.
