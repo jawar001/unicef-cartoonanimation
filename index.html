@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!-- build-provenance
+  pipeline: /animated-website
+  generated-at: 2026-04-26T00:00:00Z
+  brief-source: arguments
+  mcp:
+    stitch: fell-back
+    firecrawl: skipped
+    magic: fell-back
+  skills:
+    brand: fired
+    ui-ux-pro-max: fired
+    design-system: fired
+    design: fell-back
+    ui-styling: fired
+    nano-banana-2: fell-back
+  images:
+    hero: tier-3
+    mina-portrait: tier-3
+    raju-portrait: tier-3
+    mithu-portrait: tier-3
+    parents-portrait: tier-3
+    village-school-scene: tier-3
+    gallery-1: tier-3
+    gallery-2: tier-3
+    gallery-3: tier-3
+    gallery-4: tier-3
+    og-image: tier-3
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mina &amp; Raju Reimagined — A Story Retold in Light</title>
+<meta name="description" content="An animated portfolio reimagining Bangladesh's beloved Mina and Raju as semi-realistic humans — preserving their stories of courage, education, and a village's light." />
+<meta property="og:title" content="Mina &amp; Raju Reimagined" />
+<meta property="og:description" content="A semi-realistic, cinematic retelling of Bangladesh's most beloved cartoon — Mina, Raju, Mithu, and the village that raised them." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="Image/HERO%20SECTION.jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ---------- DESIGN TOKENS ---------- */
+  :root {
+    --terracotta-500:#c0532b; --terracotta-600:#9e3f1c;
+    --saffron-400:#e8a548;   --saffron-500:#d98724;
+    --indigo-700:#2d2456;    --indigo-900:#1a143a;
+    --forest-500:#557a3e;
+    --cream-50:#f7efe1;      --cream-100:#f1e4cd;
+    --beige-200:#e6d3b3;
+    --espresso-900:#2b1d12;  --espresso-700:#4a3322;
+
+    --color-bg:var(--cream-50);
+    --color-surface:var(--cream-100);
+    --color-raised:#fbf6ec;
+    --color-ink:var(--espresso-900);
+    --color-ink-soft:var(--espresso-700);
+    --color-primary:var(--terracotta-500);
+    --color-primary-deep:var(--terracotta-600);
+    --color-secondary:var(--indigo-700);
+    --color-accent:var(--saffron-400);
+    --color-tertiary:var(--forest-500);
+
+    --r-sm:8px; --r-md:16px; --r-lg:24px; --r-xl:32px; --r-pill:9999px;
+    --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-6:24px;
+    --s-8:32px; --s-12:48px; --s-16:64px; --s-24:96px; --s-32:128px;
+    --elev-sm:0 2px 8px rgba(43,29,18,.08);
+    --elev-md:0 8px 24px rgba(43,29,18,.10);
+    --elev-lg:0 16px 48px rgba(43,29,18,.14);
+    --font-display:'Fraunces',Georgia,serif;
+    --font-body:'Inter',system-ui,-apple-system,sans-serif;
+    --ease-out:cubic-bezier(0.22,1,0.36,1);
+    --d-micro:150ms; --d-std:300ms; --d-expr:600ms; --d-hero:900ms;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--color-bg);color:var(--color-ink);
+    font-family:var(--font-body);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:var(--font-display);line-height:1.15;font-weight:600;letter-spacing:-.01em;margin:0;}
+  h1{font-size:clamp(2.4rem,6vw,4.8rem);font-weight:800;}
+  h2{font-size:clamp(1.8rem,3.6vw,2.8rem);}
+  h3{font-size:clamp(1.2rem,2vw,1.5rem);}
+  p{margin:0 0 1em;color:var(--color-ink-soft);}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .container{max-width:1280px;margin:0 auto;padding:0 var(--s-6);}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--color-ink);color:var(--cream-50);padding:var(--s-3) var(--s-4);border-radius:var(--r-md);z-index:999;}
+  .skip:focus{left:var(--s-4);top:var(--s-4);}
+
+  header.site{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(247,239,225,.78);border-bottom:1px solid rgba(43,29,18,.06);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:var(--s-3) var(--s-6);max-width:1280px;margin:0 auto;}
+  .logo{display:flex;align-items:center;gap:var(--s-2);font-family:var(--font-display);font-weight:800;font-size:1.15rem;color:var(--color-ink);}
+  .logo-mark{width:36px;height:36px;}
+  nav ul{display:none;gap:var(--s-6);list-style:none;margin:0;padding:0;}
+  nav a{font-size:.95rem;font-weight:500;color:var(--color-ink-soft);transition:color var(--d-micro) var(--ease-out);}
+  nav a:hover{color:var(--color-primary);}
+  @media (min-width:1024px){nav ul{display:flex;}}
+
+  .btn{display:inline-flex;align-items:center;gap:var(--s-2);padding:14px 26px;border-radius:var(--r-pill);font-family:var(--font-body);font-weight:600;font-size:1rem;border:none;cursor:pointer;transition:transform var(--d-std) var(--ease-out),box-shadow var(--d-std) var(--ease-out),background var(--d-std);text-decoration:none;}
+  .btn-primary{background:var(--color-primary);color:var(--cream-50);box-shadow:var(--elev-md);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--elev-lg);background:var(--color-primary-deep);}
+  .btn-ghost{background:transparent;color:var(--color-ink);border:1.5px solid rgba(43,29,18,.18);}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:var(--color-primary);color:var(--color-primary);}
+  .btn:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px;}
+
+  .hero{position:relative;min-height:100vh;padding:140px 0 var(--s-24);display:flex;align-items:center;
+    background:radial-gradient(900px 500px at 85% 20%,rgba(232,165,72,.45),transparent 70%),radial-gradient(800px 600px at 10% 90%,rgba(45,36,86,.18),transparent 70%),linear-gradient(180deg,#f9ecd0 0%,#f3deb8 60%,#e8c98c 100%);overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:var(--s-12);align-items:center;}
+  @media (min-width:1024px){.hero-grid{grid-template-columns:1.1fr 1fr;gap:var(--s-16);}}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:var(--s-2);padding:6px 14px;border-radius:var(--r-pill);background:rgba(192,83,43,.12);color:var(--color-primary-deep);font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:var(--s-6);}
+  .hero h1 .word{display:inline-block;opacity:0;transform:translateY(28px);}
+  .hero h1 em{font-style:italic;font-weight:600;color:var(--color-primary-deep);}
+  .hero-sub{font-size:1.15rem;max-width:540px;margin-top:var(--s-6);}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:var(--s-3);margin-top:var(--s-8);}
+  .hero-art{position:relative;}
+  .hero-art img,.hero-art svg{width:100%;height:auto;border-radius:var(--r-xl);filter:drop-shadow(0 30px 50px rgba(43,29,18,.18));}
+  .float-soft{animation:floatSoft 9s var(--ease-out) infinite;}
+  .float-slow{animation:floatSoft 12s var(--ease-out) infinite reverse;}
+  @keyframes floatSoft{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+  .sun-rays{position:absolute;right:-100px;top:-80px;width:480px;height:480px;background:radial-gradient(circle,rgba(232,165,72,.55),transparent 60%);filter:blur(20px);animation:pulseRay 8s ease-in-out infinite;pointer-events:none;}
+  @keyframes pulseRay{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.08);}}
+
+  section{padding:var(--s-24) 0;position:relative;}
+  .section-eyebrow{display:inline-block;padding:6px 14px;border-radius:var(--r-pill);background:rgba(45,36,86,.08);color:var(--color-secondary);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:var(--s-4);}
+  .section-head{max-width:720px;margin-bottom:var(--s-12);}
+  .section-head p{font-size:1.1rem;margin-top:var(--s-3);}
+  .reveal{opacity:0;transform:translateY(32px);transition:opacity 700ms var(--ease-out),transform 700ms var(--ease-out);}
+  .reveal.in{opacity:1;transform:none;}
+
+  .about{background:var(--color-surface);}
+  .timeline{position:relative;display:grid;gap:var(--s-8);margin-top:var(--s-8);}
+  .timeline::before{content:'';position:absolute;left:18px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--color-primary),var(--color-accent),var(--color-secondary));border-radius:var(--r-pill);}
+  @media (min-width:1024px){.timeline::before{left:50%;transform:translateX(-50%);}}
+  .t-item{position:relative;padding-left:60px;}
+  @media (min-width:1024px){.t-item{padding-left:0;width:46%;}.t-item:nth-child(even){margin-left:54%;}.t-item:nth-child(odd){text-align:right;}}
+  .t-dot{position:absolute;left:8px;top:8px;width:24px;height:24px;border-radius:var(--r-pill);background:var(--color-primary);border:4px solid var(--cream-50);box-shadow:var(--elev-sm);}
+  @media (min-width:1024px){.t-item:nth-child(odd) .t-dot{left:auto;right:-66px;}.t-item:nth-child(even) .t-dot{left:-66px;}}
+  .t-year{font-family:var(--font-display);font-size:1.4rem;color:var(--color-primary-deep);font-weight:700;}
+  .t-card{background:var(--color-raised);padding:var(--s-6);border-radius:var(--r-lg);box-shadow:var(--elev-sm);margin-top:var(--s-2);}
+  .t-card h3{margin-bottom:var(--s-2);}
+
+  .characters{background:var(--color-bg);}
+  .char-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s-6);}
+  .char-card{background:var(--color-raised);border-radius:var(--r-xl);padding:var(--s-6);box-shadow:var(--elev-sm);transition:transform var(--d-std) var(--ease-out),box-shadow var(--d-std) var(--ease-out);cursor:pointer;position:relative;overflow:hidden;}
+  .char-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,165,72,.15),transparent 60%);opacity:0;transition:opacity var(--d-std);}
+  .char-card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:var(--elev-lg);}
+  .char-card:hover::before{opacity:1;}
+  .char-card svg,.char-card img{width:100%;height:240px;object-fit:cover;border-radius:var(--r-lg);margin-bottom:var(--s-4);}
+  .char-card h3{margin-bottom:var(--s-2);position:relative;}
+  .char-card p{font-size:.95rem;position:relative;}
+  .char-tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--color-primary-deep);background:rgba(192,83,43,.1);padding:3px 10px;border-radius:var(--r-pill);margin-bottom:var(--s-3);}
+
+  .impact{background:linear-gradient(180deg,var(--indigo-700) 0%,var(--indigo-900) 100%);color:var(--cream-50);}
+  .impact .section-eyebrow{background:rgba(232,165,72,.18);color:var(--saffron-400);}
+  .impact h2{color:var(--cream-50);}
+  .impact p{color:rgba(247,239,225,.75);}
+  .impact-grid{display:grid;grid-template-columns:1fr;gap:var(--s-12);align-items:center;}
+  @media (min-width:1024px){.impact-grid{grid-template-columns:1fr 1fr;gap:var(--s-16);}}
+  .theme-list{display:grid;gap:var(--s-4);margin-top:var(--s-6);}
+  .theme{display:flex;gap:var(--s-4);align-items:flex-start;padding:var(--s-6);border-radius:var(--r-lg);background:rgba(247,239,225,.05);border:1px solid rgba(247,239,225,.08);transition:background var(--d-std);}
+  .theme:hover{background:rgba(247,239,225,.09);}
+  .theme-icon{flex-shrink:0;width:48px;height:48px;border-radius:var(--r-md);background:linear-gradient(135deg,var(--saffron-400),var(--terracotta-500));display:flex;align-items:center;justify-content:center;color:var(--cream-50);}
+  .theme h3{color:var(--cream-50);font-size:1.15rem;margin-bottom:4px;}
+
+  .gallery{background:var(--color-surface);}
+  .g-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s-4);}
+  @media (min-width:1024px){
+    .g-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;}
+    .g-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+    .g-item:nth-child(4){grid-row:span 2;}
+  }
+  .g-item{border-radius:var(--r-lg);overflow:hidden;background:var(--color-raised);box-shadow:var(--elev-sm);transition:transform var(--d-std) var(--ease-out),box-shadow var(--d-std) var(--ease-out);position:relative;}
+  .g-item:hover{transform:scale(1.02);box-shadow:var(--elev-md);}
+  .g-item svg,.g-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  @media (min-width:1024px){ .g-item img{min-height:320px;} }
+  .g-cap{position:absolute;left:var(--s-4);bottom:var(--s-4);background:rgba(43,29,18,.7);color:var(--cream-50);padding:6px 12px;border-radius:var(--r-pill);font-size:.8rem;font-weight:500;backdrop-filter:blur(6px);}
+
+  .closing{text-align:center;background:radial-gradient(800px 400px at 50% 0%,rgba(232,165,72,.35),transparent 60%),var(--color-bg);padding:var(--s-32) 0;}
+  .closing h2{font-size:clamp(2rem,4.5vw,3.4rem);max-width:800px;margin:0 auto var(--s-6);}
+  .closing p{font-size:1.2rem;max-width:640px;margin:0 auto var(--s-8);}
+  .closing-cta{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s-3);}
+
+  footer{background:var(--color-ink);color:rgba(247,239,225,.7);padding:var(--s-12) 0 var(--s-8);text-align:center;font-size:.9rem;}
+  footer .logo{justify-content:center;color:var(--cream-50);margin-bottom:var(--s-4);}
+  footer a{color:var(--saffron-400);}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:200ms!important;}
+    .reveal{transform:none;}
+    .hero h1 .word{opacity:1;transform:none;}
+    .float-soft,.float-slow,.sun-rays{animation:none;}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="site" role="banner">
+  <div class="nav">
+    <a class="logo" href="#top" aria-label="Mina and Raju Reimagined home">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <defs>
+          <radialGradient id="lg1" cx="35%" cy="30%"><stop offset="0%" stop-color="#e8a548"/><stop offset="100%" stop-color="#c0532b"/></radialGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" fill="url(#lg1)"/>
+        <path d="M12 24 Q20 14 28 24" stroke="#f7efe1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <circle cx="15" cy="18" r="1.6" fill="#f7efe1"/>
+        <circle cx="25" cy="18" r="1.6" fill="#f7efe1"/>
+      </svg>
+      Mina &amp; Raju
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#about">About Mina</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#impact">Story &amp; Impact</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#closing">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="sun-rays" aria-hidden="true"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-eyebrow">Animated Portfolio · Reimagined</span>
+      <h1 id="hero-title">
+        <span class="word">Mina</span> <span class="word">&amp;</span> <span class="word">Raju</span><br/>
+        <span class="word"><em>A Story</em></span> <span class="word"><em>Reimagined</em></span>
+      </h1>
+      <p class="hero-sub">A semi-realistic, cinematic retelling of Bangladesh's most beloved cartoon — where a girl, her brother, and a clever parrot still teach a village to listen.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#about">Begin the story
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#gallery">Explore the gallery</a>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <img src="Image/HERO%20SECTION.jpeg" alt="Mina and Raju in a sunset village — semi-realistic hero scene" class="float-soft" />
+      <svg style="display:none" viewBox="0 0 600 600" role="img" aria-label="hidden fallback">
+        <defs>
+          <radialGradient id="sky" cx="70%" cy="30%" r="80%">
+            <stop offset="0%" stop-color="#fde6b5"/>
+            <stop offset="50%" stop-color="#f0a85a"/>
+            <stop offset="100%" stop-color="#5a3a78"/>
+          </radialGradient>
+          <linearGradient id="ground" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#a05a2a"/>
+            <stop offset="100%" stop-color="#3a2616"/>
+          </linearGradient>
+          <linearGradient id="minaScarf" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#e8a548"/>
+            <stop offset="100%" stop-color="#c0532b"/>
+          </linearGradient>
+          <linearGradient id="rajuShirt" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#557a3e"/>
+            <stop offset="100%" stop-color="#34522a"/>
+          </linearGradient>
+          <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="3"/>
+            <feColorMatrix values="0 0 0 0 0.7  0 0 0 0 0.5  0 0 0 0 0.3  0 0 0 0.06 0"/>
+            <feComposite in2="SourceGraphic" operator="in"/>
+          </filter>
+          <filter id="soft-blur"><feGaussianBlur stdDeviation="0.4"/></filter>
+        </defs>
+
+        <rect width="600" height="600" fill="url(#sky)"/>
+        <circle cx="430" cy="190" r="70" fill="#ffd884" opacity=".95"/>
+        <circle cx="430" cy="190" r="100" fill="#ffd884" opacity=".25"/>
+
+        <path d="M0 380 Q150 320 300 360 T600 340 L600 600 L0 600 Z" fill="#7e4a78" opacity=".55" filter="url(#soft-blur)"/>
+        <path d="M0 430 Q200 380 380 410 T600 400 L600 600 L0 600 Z" fill="#5e3866" opacity=".7"/>
+
+        <g opacity=".85" filter="url(#soft-blur)">
+          <path d="M80 430 L80 400 L100 380 L120 400 L120 430 Z" fill="#3d2748"/>
+          <path d="M150 430 L150 395 L170 375 L195 395 L195 430 Z" fill="#3d2748"/>
+          <path d="M460 425 L460 395 L480 372 L505 395 L505 425 Z" fill="#3d2748"/>
+          <path d="M520 430 L520 405 L540 388 L560 405 L560 430 Z" fill="#3d2748"/>
+        </g>
+
+        <g>
+          <rect x="48" y="300" width="6" height="160" fill="#2b1a14"/>
+          <path d="M51 300 Q20 280 5 295 Q22 300 51 308 Z" fill="#2d3b1f"/>
+          <path d="M51 300 Q82 275 100 290 Q80 300 51 308 Z" fill="#2d3b1f"/>
+          <path d="M51 300 Q35 275 30 250 Q45 270 51 308 Z" fill="#2d3b1f"/>
+          <path d="M51 300 Q70 275 78 248 Q60 268 51 308 Z" fill="#2d3b1f"/>
+        </g>
+
+        <path d="M0 460 Q300 440 600 470 L600 600 L0 600 Z" fill="url(#ground)"/>
+
+        <g class="float-slow" transform="translate(360 130)">
+          <ellipse cx="0" cy="0" rx="20" ry="12" fill="#3a8c4a"/>
+          <ellipse cx="-4" cy="-4" rx="10" ry="7" fill="#e8a548"/>
+          <path d="M-12 -2 Q-25 -10 -22 4 Z" fill="#2d6b3a"/>
+          <path d="M12 -2 Q25 -10 22 4 Z" fill="#2d6b3a"/>
+          <circle cx="6" cy="-6" r="2" fill="#2b1d12"/>
+          <path d="M14 -3 L20 -1 L14 1 Z" fill="#c0532b"/>
+        </g>
+
+        <g class="float-soft" transform="translate(360 320)">
+          <rect x="-14" y="120" width="12" height="50" rx="4" fill="#3a2614"/>
+          <rect x="2" y="120" width="12" height="50" rx="4" fill="#3a2614"/>
+          <path d="M-30 50 Q0 40 30 50 L36 130 L-36 130 Z" fill="url(#rajuShirt)"/>
+          <circle cx="0" cy="20" r="32" fill="#c08864"/>
+          <path d="M-30 14 Q-20 -16 0 -12 Q22 -16 30 14 Q22 -2 0 0 Q-22 -2 -30 14 Z" fill="#1a0f08"/>
+          <circle cx="-10" cy="22" r="2.4" fill="#1a0f08"/>
+          <circle cx="10" cy="22" r="2.4" fill="#1a0f08"/>
+          <path d="M-7 32 Q0 38 7 32" stroke="#5a2b14" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M28 60 Q50 30 48 8" stroke="#c08864" stroke-width="14" fill="none" stroke-linecap="round"/>
+        </g>
+
+        <g transform="translate(220 290)">
+          <path d="M-44 100 Q0 90 44 100 L60 200 L-60 200 Z" fill="url(#minaScarf)"/>
+          <rect x="-12" y="195" width="10" height="30" rx="3" fill="#3a2614"/>
+          <rect x="2" y="195" width="10" height="30" rx="3" fill="#3a2614"/>
+          <path d="M-30 30 Q0 22 30 30 L34 110 L-34 110 Z" fill="#9e3f1c"/>
+          <path d="M22 38 Q70 50 90 100 Q60 80 30 70 Z" fill="#e8a548" opacity=".9"/>
+          <circle cx="0" cy="0" r="36" fill="#c79372"/>
+          <path d="M-36 -2 Q-32 -36 0 -36 Q32 -36 36 -2 Q40 30 24 36 L24 14 Q20 -8 0 -8 Q-20 -8 -24 14 L-24 36 Q-40 30 -36 -2 Z" fill="#1a0f08"/>
+          <circle cx="0" cy="-12" r="2.5" fill="#c0532b"/>
+          <ellipse cx="-12" cy="4" rx="3" ry="3.6" fill="#1a0f08"/>
+          <ellipse cx="12" cy="4" rx="3" ry="3.6" fill="#1a0f08"/>
+          <circle cx="-11" cy="3" r="0.9" fill="#fff"/>
+          <circle cx="13" cy="3" r="0.9" fill="#fff"/>
+          <path d="M-9 18 Q0 26 9 18" stroke="#5a2b14" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="-30" cy="10" r="2" fill="#e8a548"/>
+          <circle cx="30" cy="10" r="2" fill="#e8a548"/>
+        </g>
+
+        <g opacity=".5">
+          <path d="M40 560 Q45 540 50 560" stroke="#3a2616" stroke-width="2" fill="none"/>
+          <path d="M120 570 Q126 545 132 570" stroke="#3a2616" stroke-width="2" fill="none"/>
+          <path d="M510 565 Q516 542 522 565" stroke="#3a2616" stroke-width="2" fill="none"/>
+        </g>
+
+        <rect width="600" height="600" fill="#f0a85a" filter="url(#grain)" opacity=".15" style="mix-blend-mode:multiply"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">About Mina</span>
+      <h2 id="about-title">From a UNICEF idea to a generation's voice.</h2>
+      <p>Mina was never just a cartoon. She was a quiet revolution drawn for South Asian children — and her story is still being told, only now in human form.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-year">1991</div>
+        <div class="t-card">
+          <h3>The Idea Begins</h3>
+          <p>UNICEF Bangladesh, with regional support, conceives a children's character to advance girls' education and child rights across South Asia.</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-year">1993</div>
+        <div class="t-card">
+          <h3>Mina is Born</h3>
+          <p>The first episode airs. A nine-year-old village girl, her younger brother Raju, and a clever parrot named Mithu enter living rooms across Bangladesh, India, Nepal, and Pakistan.</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-year">1990s</div>
+        <div class="t-card">
+          <h3>A Continent Listens</h3>
+          <p>Episodes tackle gender equality, school attendance, hygiene, and child marriage — wrapped in stories children actually want to watch.</p>
+        </div>
+      </div>
+      <div class="t-item reveal">
+        <span class="t-dot"></span>
+        <div class="t-year">Today</div>
+        <div class="t-card">
+          <h3>Reimagined</h3>
+          <p>This portfolio reintroduces Mina, Raju, and the village in semi-realistic human form — the same heart, a new register, for a new generation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="characters" id="characters" aria-labelledby="char-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Characters</span>
+      <h2 id="char-title">The pack, in a new light.</h2>
+      <p>Hover to meet each one. Same souls — rendered in a register closer to memory than to drawing.</p>
+    </div>
+
+    <div class="char-grid">
+      <article class="char-card reveal" tabindex="0">
+        <img src="Image/MINA.jpeg" alt="Mina, semi-realistic human portrait" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" aria-label="hidden">
+          <defs><linearGradient id="bg-mina" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#f3deb8"/><stop offset="100%" stop-color="#e8a548"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#bg-mina)"/>
+          <g transform="translate(100 130)">
+            <path d="M-40 30 Q0 20 40 30 L50 90 L-50 90 Z" fill="#9e3f1c"/>
+            <circle cx="0" cy="-20" r="42" fill="#c79372"/>
+            <path d="M-42 -22 Q-38 -56 0 -56 Q38 -56 42 -22 Q46 8 28 16 L28 -6 Q24 -28 0 -28 Q-24 -28 -28 -6 L-28 16 Q-46 8 -42 -22 Z" fill="#1a0f08"/>
+            <circle cx="0" cy="-32" r="3" fill="#c0532b"/>
+            <ellipse cx="-14" cy="-14" rx="3" ry="4" fill="#1a0f08"/>
+            <ellipse cx="14" cy="-14" rx="3" ry="4" fill="#1a0f08"/>
+            <path d="M-10 0 Q0 8 10 0" stroke="#5a2b14" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="char-tag">The Leader</span>
+        <h3>Mina</h3>
+        <p>Confident, curious, and gentle. The girl who asks the questions a village forgets to ask.</p>
+      </article>
+
+      <article class="char-card reveal" tabindex="0">
+        <img src="Image/RAJU.jpeg" alt="Raju, semi-realistic human portrait" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" aria-label="hidden">
+          <defs><linearGradient id="bg-raju" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#dde7c2"/><stop offset="100%" stop-color="#557a3e"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#bg-raju)"/>
+          <g transform="translate(100 130)">
+            <path d="M-36 30 Q0 22 36 30 L44 90 L-44 90 Z" fill="#34522a"/>
+            <circle cx="0" cy="-20" r="40" fill="#c08864"/>
+            <path d="M-36 -24 Q-26 -52 0 -50 Q26 -52 36 -24 Q28 -38 0 -36 Q-28 -38 -36 -24 Z" fill="#1a0f08"/>
+            <circle cx="-12" cy="-14" r="3" fill="#1a0f08"/>
+            <circle cx="12" cy="-14" r="3" fill="#1a0f08"/>
+            <path d="M-9 -2 Q0 6 9 -2" stroke="#5a2b14" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="char-tag">The Spark</span>
+        <h3>Raju</h3>
+        <p>Mina's younger brother. Mischievous, devoted, and the first to laugh at her jokes — even the bad ones.</p>
+      </article>
+
+      <article class="char-card reveal" tabindex="0">
+        <img src="Image/MITHU.jpeg" alt="Mithu the parrot, semi-realistic portrait" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" aria-label="hidden">
+          <defs><linearGradient id="bg-mithu" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#fde6b5"/><stop offset="100%" stop-color="#c0532b"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#bg-mithu)"/>
+          <g transform="translate(100 110)">
+            <ellipse cx="0" cy="20" rx="50" ry="36" fill="#3a8c4a"/>
+            <circle cx="-6" cy="-12" r="30" fill="#3a8c4a"/>
+            <path d="M-30 -6 Q-50 -22 -42 18 Z" fill="#2d6b3a"/>
+            <path d="M30 18 Q56 36 50 -6 Z" fill="#2d6b3a"/>
+            <ellipse cx="-2" cy="-10" rx="14" ry="12" fill="#e8a548"/>
+            <circle cx="2" cy="-12" r="3.5" fill="#1a0f08"/>
+            <circle cx="3" cy="-13" r="1.2" fill="#fff"/>
+            <path d="M14 -8 L26 -2 L14 4 Z" fill="#c0532b"/>
+          </g>
+        </svg>
+        <span class="char-tag">The Voice</span>
+        <h3>Mithu</h3>
+        <p>The parrot who repeats only what matters. A small creature with the village's sharpest memory.</p>
+      </article>
+
+      <article class="char-card reveal" tabindex="0">
+        <img src="Image/PARENTS%20%20VILLAGERS.jpeg" alt="Parents and villagers, semi-realistic group portrait" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" aria-label="hidden">
+          <defs><linearGradient id="bg-parents" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#e6d3b3"/><stop offset="100%" stop-color="#7e4a78"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#bg-parents)"/>
+          <g transform="translate(100 130)">
+            <g transform="translate(-30 0)">
+              <path d="M-30 30 Q0 20 30 30 L34 90 L-34 90 Z" fill="#9e3f1c"/>
+              <circle cx="0" cy="-12" r="30" fill="#c79372"/>
+              <path d="M-30 -14 Q-26 -42 0 -42 Q26 -42 30 -14 Q34 14 18 22 L18 0 Q14 -22 0 -22 Q-14 -22 -18 0 L-18 22 Q-34 14 -30 -14 Z" fill="#1a0f08"/>
+              <circle cx="-9" cy="-8" r="2" fill="#1a0f08"/>
+              <circle cx="9" cy="-8" r="2" fill="#1a0f08"/>
+              <path d="M-6 4 Q0 9 6 4" stroke="#5a2b14" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+            </g>
+            <g transform="translate(36 -4)">
+              <path d="M-32 32 Q0 22 32 32 L36 92 L-36 92 Z" fill="#34522a"/>
+              <circle cx="0" cy="-14" r="30" fill="#a8704a"/>
+              <path d="M-28 -18 Q-22 -44 0 -42 Q22 -44 28 -18 Q22 -32 0 -30 Q-22 -32 -28 -18 Z" fill="#2b1d12"/>
+              <circle cx="-9" cy="-10" r="2" fill="#1a0f08"/>
+              <circle cx="9" cy="-10" r="2" fill="#1a0f08"/>
+              <path d="M-7 4 Q0 8 7 4" stroke="#3a2614" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+              <path d="M-8 0 Q0 4 8 0" stroke="#2b1d12" stroke-width="3" fill="none" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+        <span class="char-tag">The Village</span>
+        <h3>Parents &amp; Villagers</h3>
+        <p>The chorus that learns alongside her — fathers, mothers, neighbors, the slow turning of an entire community.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="reveal">
+        <span class="section-eyebrow">Story &amp; Impact</span>
+        <h2 id="impact-title">A cartoon that changed the conversation.</h2>
+        <p>Mina's stories were short. The change they sparked was not. Generations of South Asian children grew up knowing their voice mattered — because hers did first.</p>
+        <img src="Image/STORY%20SCENE.jpeg" alt="A storybook scene of Mina at the village school" style="margin-top:24px;border-radius:24px;box-shadow:var(--elev-md);width:100%;height:auto;display:block;" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 500 280">
+          <defs><linearGradient id="dawn" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#f4c97a"/><stop offset="100%" stop-color="#9e3f1c"/></linearGradient></defs>
+          <rect width="500" height="280" fill="url(#dawn)"/>
+          <circle cx="380" cy="80" r="40" fill="#fde6b5" opacity=".9"/>
+          <rect x="60" y="140" width="160" height="100" fill="#c79372"/>
+          <path d="M50 140 L140 90 L230 140 Z" fill="#7e3a1c"/>
+          <rect x="120" y="180" width="40" height="60" fill="#3a2614"/>
+          <rect x="80" y="160" width="20" height="20" fill="#fde6b5"/>
+          <rect x="180" y="160" width="20" height="20" fill="#fde6b5"/>
+          <g transform="translate(320 170)">
+            <ellipse cx="0" cy="60" rx="30" ry="6" fill="#000" opacity=".15"/>
+            <path d="M-18 20 Q0 14 18 20 L22 60 L-22 60 Z" fill="#9e3f1c"/>
+            <circle cx="0" cy="-2" r="20" fill="#c79372"/>
+            <path d="M-20 -4 Q-16 -22 0 -22 Q16 -22 20 -4 Q22 12 12 16 L12 4 Q10 -8 0 -8 Q-10 -8 -12 4 L-12 16 Q-22 12 -20 -4 Z" fill="#1a0f08"/>
+            <rect x="-10" y="22" width="20" height="14" fill="#f7efe1" stroke="#5a2b14"/>
+          </g>
+          <path d="M0 240 L500 240 L500 280 L0 280 Z" fill="#3a2616"/>
+        </svg>
+      </div>
+
+      <div class="theme-list reveal">
+        <div class="theme">
+          <div class="theme-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4-9-4z M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Education for Girls</h3>
+            <p>Episodes that asked an entire generation: why should only one of these children go to school?</p>
+          </div>
+        </div>
+        <div class="theme">
+          <div class="theme-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Child Rights</h3>
+            <p>Stories about being heard, being safe, being chosen — tucked into a quarter-hour of joyful animation.</p>
+          </div>
+        </div>
+        <div class="theme">
+          <div class="theme-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18 M12 3a14 14 0 0 1 0 18 M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <div>
+            <h3>Social Awareness</h3>
+            <p>Hygiene. Marriage. Dowry. Conversations a village had never had — sparked by a girl with a bindi and a smile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Gallery</span>
+      <h2 id="gallery-title">Concept art &amp; reimagined scenes.</h2>
+      <p>A visual showcase — reference compositions and human-form renderings of the world Mina lives in.</p>
+    </div>
+
+    <div class="g-grid">
+      <div class="g-item reveal">
+        <img src="Image/HERO%20SECTION.jpeg" alt="Mina and Raju in the sunset village" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f4c97a"/><stop offset="1" stop-color="#9e3f1c"/></linearGradient></defs>
+          <rect width="400" height="400" fill="url(#g1)"/>
+          <circle cx="280" cy="120" r="60" fill="#fde6b5" opacity=".9"/>
+          <path d="M0 280 Q100 240 200 270 T400 260 L400 400 L0 400 Z" fill="#5e3866"/>
+          <path d="M0 320 Q150 290 280 310 T400 320 L400 400 L0 400 Z" fill="#3a2616"/>
+          <g transform="translate(150 250)"><circle r="22" fill="#c79372"/><path d="M-22 -2 Q-18 -22 0 -22 Q18 -22 22 -2 Q24 14 14 18 L14 6 Q10 -6 0 -6 Q-10 -6 -14 6 L-14 18 Q-24 14 -22 -2 Z" fill="#1a0f08"/></g>
+        </svg>
+        <span class="g-cap">Sunset Walk</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="Image/MITHU.jpeg" alt="Mithu the parrot, close-up" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#dde7c2"/><stop offset="1" stop-color="#34522a"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#g2)"/>
+          <circle cx="100" cy="80" r="40" fill="#3a8c4a"/>
+          <ellipse cx="100" cy="80" rx="20" ry="16" fill="#e8a548"/>
+          <path d="M118 75 L132 80 L118 85 Z" fill="#c0532b"/>
+          <path d="M0 150 Q100 130 200 160 L200 200 L0 200 Z" fill="#557a3e"/>
+        </svg>
+        <span class="g-cap">Mithu in the Mango Tree</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="Image/BACKGROUND%20SCENE.jpeg" alt="Background village scene" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fde6b5"/><stop offset="1" stop-color="#c0532b"/></linearGradient></defs>
+          <rect width="200" height="200" fill="url(#g3)"/>
+          <rect x="40" y="80" width="120" height="80" fill="#c79372"/>
+          <path d="M30 80 L100 40 L170 80 Z" fill="#7e3a1c"/>
+          <rect x="86" y="110" width="28" height="50" fill="#3a2614"/>
+          <rect x="56" y="100" width="16" height="16" fill="#fde6b5"/>
+          <rect x="128" y="100" width="16" height="16" fill="#fde6b5"/>
+        </svg>
+        <span class="g-cap">The Village School</span>
+      </div>
+      <div class="g-item reveal">
+        <img src="Image/MINA.jpeg" alt="Mina, reimagined portrait" loading="lazy" decoding="async" />
+        <svg style="display:none" viewBox="0 0 200 400" preserveAspectRatio="xMidYMid slice">
+          <defs><linearGradient id="g4" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f3deb8"/><stop offset="1" stop-color="#5a3a78"/></linearGradient></defs>
+          <rect width="200" height="400" fill="url(#g4)"/>
+          <g transform="translate(100 250)">
+            <path d="M-40 30 Q0 20 40 30 L48 130 L-48 130 Z" fill="#9e3f1c"/>
+            <circle cx="0" cy="-15" r="36" fill="#c79372"/>
+            <path d="M-36 -16 Q-32 -50 0 -50 Q32 -50 36 -16 Q40 14 22 22 L22 0 Q18 -22 0 -22 Q-18 -22 -22 0 L-22 22 Q-40 14 -36 -16 Z" fill="#1a0f08"/>
+            <circle cx="0" cy="-26" r="3" fill="#c0532b"/>
+            <ellipse cx="-12" cy="-10" rx="3" ry="4" fill="#1a0f08"/>
+            <ellipse cx="12" cy="-10" rx="3" ry="4" fill="#1a0f08"/>
+            <path d="M-8 4 Q0 12 8 4" stroke="#5a2b14" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <span class="g-cap">Mina, Reimagined</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="closing" aria-labelledby="close-title">
+  <div class="container reveal">
+    <h2 id="close-title">A story doesn't end. It is handed down.</h2>
+    <p>Mina taught a continent that a girl with a question is more powerful than a village without one. This portfolio is a small thank-you — and an invitation to keep retelling her story in whatever register the next generation needs.</p>
+    <div class="closing-cta">
+      <a class="btn btn-primary" href="mailto:hello@example.com">Get in touch</a>
+      <a class="btn btn-ghost" href="#top">Back to the beginning</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="url(#lg1)"/>
+        <path d="M12 24 Q20 14 28 24" stroke="#f7efe1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      </svg>
+      Mina &amp; Raju Reimagined
+    </div>
+    <p>An animated portfolio · A tribute to UNICEF's Mina (1993). Character likenesses are creative reimaginings made with respect for the original work.</p>
+    <p>Crafted with warmth · <a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const words = document.querySelectorAll('.hero h1 .word');
+    if (reduce){
+      words.forEach(w => { w.style.opacity = 1; w.style.transform = 'none'; });
+    } else {
+      words.forEach((w, i) => {
+        w.style.transition = 'opacity 900ms var(--ease-out), transform 900ms var(--ease-out)';
+        w.style.transitionDelay = (120 * i) + 'ms';
+        requestAnimationFrame(() => {
+          w.style.opacity = 1;
+          w.style.transform = 'none';
+        });
+      });
+    }
+  })();
+
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)){
+      els.forEach(e => e.classList.add('in'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting){
+          setTimeout(() => entry.target.classList.add('in'), i * 80);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(e => io.observe(e));
+  })();
+
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    const art = document.querySelector('.hero-art');
+    const sun = document.querySelector('.sun-rays');
+    if (!art) return;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y < 800){
+        art.style.transform = 'translateY(' + (y * 0.08) + 'px)';
+        if (sun) sun.style.transform = 'translateY(' + (y * 0.18) + 'px) scale(' + (1 + y * 0.0004) + ')';
+      }
+    }, { passive:true });
+  })();
+</script>
+</body>
+</html>

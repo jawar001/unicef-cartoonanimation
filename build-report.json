@@ -1,0 +1,33 @@
+{
+  "pipeline": "/animated-website",
+  "generatedAt": "2026-04-26T00:00:00Z",
+  "briefSource": "arguments",
+  "project": "Mina & Raju Reimagined — Animated Portfolio Experience",
+  "mcp": {
+    "stitch": "fell-back",
+    "firecrawl": "skipped",
+    "magic": "fell-back"
+  },
+  "skills": {
+    "brand": "fired",
+    "ui-ux-pro-max": "fired",
+    "design-system": "fired",
+    "design": "fell-back",
+    "ui-styling": "fired",
+    "nano-banana-2": "fell-back"
+  },
+  "images": {
+    "hero": "tier-3",
+    "mina-portrait": "tier-3",
+    "raju-portrait": "tier-3",
+    "mithu-portrait": "tier-3",
+    "parents-portrait": "tier-3",
+    "village-school-scene": "tier-3",
+    "gallery-1": "tier-3",
+    "gallery-2": "tier-3",
+    "gallery-3": "tier-3",
+    "gallery-4": "tier-3",
+    "og-image": "tier-3"
+  },
+  "notes": "MCP servers (stitch, firecrawl, magic) not installed in this session and nano-banana-2 (infsh) not authenticated; section layouts hand-authored, all imagery rendered as inline SVG with painterly gradients, organic-noise filters, and palette-bound fills. No reference URL provided; firecrawl skipped."
+}
